@@ -81,3 +81,8 @@ int hasTable(MYSQL* con) {
 		return 1; // has
 	} else return 0; // hasn't
 }
+
+int cretthtable(MYSQL* con) {
+	if(mysql_query(con, "CREATE TABLE users (ID INT NOT NULL AUTO_INCREMENT UNIQUE,username VARCHAR(225) NOT NULL,password VARCHAR(225) NOT NULL);")) return 0;
+	return 1;
+}

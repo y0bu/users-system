@@ -1,31 +1,23 @@
 #pragma once
-#include <sys/ioctl.h> 
+
 #include <mysql/mysql.h>
-#include <stdio.h>
-#include <stdbool.h>
-#include <time.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
-#include <unistd.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
+
+#define MAX_LENGTH_DATA 225
 
 typedef struct {
-	char username[225];
-	char password[225];
+	char username[MAX_LENGTH_DATA];
+	char password[MAX_LENGTH_DATA];
 } User;
 
 extern MYSQL* con;
 
 int isUserExisting(MYSQL* con, User* user);
-
 int isUsernameExisting(MYSQL* con, char* username);
-
 int insertUser(MYSQL* con, User* user);
-
 User* getUsers(MYSQL* con);
-
 int removeUser(MYSQL* con, char* username);
-
 int hasTable(MYSQL* con);
+int cretthtable(MYSQL* con);

@@ -1,2 +1,3 @@
-main: mysqlConnection.c main.c
-	gcc mysqlConnection.c main.c -o main -lmysqlclient 
+main: mysqlConnection.c main.c utils.c
+	gcc mysqlConnection.c main.c utils.c -o main -lmysqlclient 
+	
